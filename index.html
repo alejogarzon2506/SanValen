@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Propuesta San Valentín</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f3d6de, #f6f3ee);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #4b2c35;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 30px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 20px;
+      font-size: 15px;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .yes {
+      background: #c97c94;
+      color: white;
+    }
+
+    .no {
+      background: #e3b6c4;
+      color: white;
+      position: absolute;
+    }
+
+    .roses {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .hint {
+      font-size: 13px;
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="roses">🌹 🌸 🌹</div>
+  <h1>Señorita Sofía...</h1>
+  <p>
+    Espero que el otro aun no se lo haya propuesto 
+    <br><br>
+    ¿Quieres ser mi San Valentín?
+  </p>
+
+  <button class="yes" onclick="aceptar()">Sí, todos los días</button>
+  <button class="no" id="noBtn">No (mentirosa)</button>
+
+  <div class="hint">
+    *Advertencia: el botón “No” no coopera*
+  </div>
+</div>
+
+<script>
+  function aceptar() {
+    document.body.innerHTML = `
+      <div style="
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f6f3ee, #f3d6de);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #4b2c35;
+        padding: 20px;
+      ">
+        <div>
+          <h1>Sabia que me quieres</h1>
+          <p style="font-size: 18px;">
+            Señorita Sofía, queda oficialmente registrado que eres mi...  
+            <br><br>
+            <strong>San Valentín</strong> 💕  
+            <br><br>
+            Domingo 22 de Febrero, a las 12am 
+            <br>
+            Recomendaciones: Bañarse antes de salir y no salir con la pijama de Spiderman
+          </p>
+
+          <img 
+            src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+            alt="Celebración"
+            style="width: 230px; border-radius: 20px; margin-top: 20px;"
+          >
+
+          <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
+            *Este acuerdo no tiene marcha atrás*
+          </p>
+        </div>
+      </div>
+    `;
+  }
+
+  const noBtn = document.getElementById("noBtn");
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+</script>
+
+</body>
+</html>
